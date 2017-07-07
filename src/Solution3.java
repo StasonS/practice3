@@ -20,24 +20,12 @@ public class Solution3 {
 
         int[] sum = new int[(arrA.length > arrB.length) ? arrA.length : arrB.length];
 
-        if (arrA.length > arrB.length){
-            for (int i = 0; i < sum.length; i++){
-                try{
-                    sum[i] = arrA[i] + arrB[i];
-                }
-                catch (Exception e){
-                    sum[i] = arrA[i];
-                }
+        for (int i = 0; i < sum.length; i++){
+            try{
+                sum[i] = arrA[i] + arrB[i];
             }
-        }
-        else {
-            for (int i = 0; i < sum.length; i++){
-                try{
-                    sum[i] = arrA[i] + arrB[i];
-                }
-                catch (Exception e){
-                    sum[i] = arrB[i];
-                }
+            catch (Exception e){
+                sum[i] = arrA.length > arrB.length ? arrA[i] : arrB[i];
             }
         }
 
